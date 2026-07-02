@@ -1,0 +1,732 @@
+/* CSS Variables */
+:root {
+  --primary-color: #e78d2d;
+  --primary-hover: #e66a0a;
+  --text-color: #f8f9fa;
+  --text-secondary: #e9ecef;
+  --bg-overlay: rgba(0, 0, 0, 0.75);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background: #b4b3b3;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Header and Navbar */
+.navbar {
+  width: 100%;
+  background: transparent;
+  padding: clamp(8px, 1vw, 12px) 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar.scrolled {
+  background: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-left: clamp(20px, 4vw, 50px);
+}
+
+.navbar-logo .logo img {
+  max-width: clamp(60px, 8vw, 80px);
+  height: auto;
+}
+
+.navbar-logo .text-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.navbar-logo .text-main {
+  color: #ffffff;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 700;
+}
+
+.navbar-logo .text-sub {
+  color: var(--text-secondary);
+  font-size: clamp(10px, 1.2vw, 12px);
+}
+
+/* Navigation Menu */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: clamp(15px, 2.5vw, 30px);
+  margin: 0 auto;
+  padding: 0;
+  flex: 1;
+  max-width: clamp(600px, 60%, 1000px);
+  justify-content: center;
+}
+
+.navbar-menu li a {
+  color: #ffffff;
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: clamp(8px, 1vw, 12px) clamp(12px, 1.5vw, 15px);
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.navbar-menu li a:hover {
+  color: #007bff;
+  transform: translateY(-2px);
+}
+
+.navbar-menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 6px;
+  left: 50%;
+  background-color: #007bff;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-menu li a:hover::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* Navbar Actions */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: clamp(20px, 4vw, 50px);
+}
+
+.nav-login {
+  color: #ffffff;
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: clamp(6px, 1vw, 8px) clamp(15px, 2vw, 20px);
+  background-color: #007bff;
+  border-radius: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-login:hover {
+  background-color: #28a745;
+  transform: translateY(-2px);
+}
+
+.menu-toggle {
+  display: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* User Info and Dropdown Menu */
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 50px;
+  line-height: 50px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+.user-info img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 8px 0;
+  min-width: 160px;
+  display: none;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+}
+
+.dropdown-menu li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f2f2f2;
+}
+
+/* Main Container (Profile Page) */
+.main-container {
+  display: flex;
+  max-width: 1200px;
+  margin: clamp(80px, 10vw, 120px) auto 20px;
+  padding: clamp(10px, 2vw, 20px);
+  gap: clamp(10px, 2vw, 20px);
+}
+
+/* Profile Sidebar */
+.profile-sidebar {
+  width: clamp(250px, 25%, 300px);
+  flex-shrink: 0;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: clamp(15px, 2vw, 20px);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-avatar {
+  width: clamp(100px, 12vw, 120px);
+  height: clamp(100px, 12vw, 120px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.profile-card h2 {
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.profile-card p {
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: #666;
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-card p i {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+/* Main Content (Posts) */
+.main-content {
+  flex: 1;
+}
+
+.post {
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: clamp(15px, 2vw, 20px);
+  padding: clamp(15px, 2vw, 20px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.post-avatar {
+  width: clamp(32px, 4vw, 40px);
+  height: clamp(32px, 4vw, 40px);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-user-info h3 {
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: #333;
+  margin: 0;
+}
+
+.post-user-info small {
+  font-size: clamp(10px, 1.2vw, 12px);
+  color: #999;
+}
+
+.post-content p {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.post-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.post-stats {
+  display: flex;
+  gap: clamp(10px, 1.5vw, 15px);
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: #666;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.post-actions button {
+  background: none;
+  border: none;
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: #666;
+  cursor: pointer;
+  padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 12px);
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.post-actions button:hover {
+  background: #f8f9fa;
+}
+
+.action-like.liked {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.comments-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.comment {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.comment-avatar {
+  width: clamp(28px, 3vw, 32px);
+  height: clamp(28px, 3vw, 32px);
+  border-radius: 50%;
+}
+
+.comment-content {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.commenter-name {
+  font-size: clamp(12px, 1.4vw, 14px);
+  font-weight: bold;
+  color: #333;
+}
+
+.comment-content p {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: #333;
+  margin: 5px 0;
+}
+
+.comment-content small {
+  font-size: clamp(10px, 1.2vw, 12px);
+  color: #999;
+}
+
+.comment-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.comment-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: clamp(12px, 1.4vw, 14px);
+}
+
+.comment-form button {
+  padding: clamp(8px, 1vw, 10px) clamp(15px, 2vw, 20px);
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.comment-form button:hover {
+  background: var(--primary-hover);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .main-container {
+    margin: clamp(70px, 8vw, 100px) auto 15px;
+    padding: clamp(8px, 1.5vw, 15px);
+  }
+
+  .profile-sidebar {
+    width: clamp(200px, 30%, 250px);
+  }
+
+  .profile-card {
+    padding: clamp(12px, 1.5vw, 15px);
+  }
+
+  .profile-avatar {
+    width: clamp(80px, 10vw, 100px);
+    height: clamp(80px, 10vw, 100px);
+  }
+
+  .profile-card h2 {
+    font-size: clamp(16px, 2vw, 18px);
+  }
+
+  .profile-card p {
+    font-size: clamp(11px, 1.3vw, 12px);
+  }
+
+  .post {
+    padding: clamp(12px, 1.5vw, 15px);
+  }
+
+  .navbar-menu {
+    max-width: clamp(500px, 50%, 800px);
+    gap: clamp(10px, 2vw, 20px);
+  }
+
+  .navbar-menu li a {
+    font-size: clamp(12px, 1.3vw, 14px);
+    padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 12px);
+  }
+
+  .nav-login {
+    font-size: clamp(12px, 1.3vw, 14px);
+    padding: clamp(5px, 0.8vw, 6px) clamp(12px, 1.8vw, 15px);
+  }
+
+  .navbar-logo .logo img {
+    max-width: clamp(50px, 7vw, 60px);
+  }
+
+  .navbar-logo {
+    margin-left: clamp(15px, 3vw, 30px);
+  }
+
+  .navbar-actions {
+    margin-right: clamp(15px, 3vw, 30px);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+    background: #000000;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: clamp(200px, 60%, 300px);
+    height: calc(100vh - 60px);
+    background: #000000;
+    transform: translateX(-100%);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    overflow-y: auto;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .navbar-menu li a {
+    font-size: 16px;
+    padding: 12px 20px;
+    text-align: left;
+    border-radius: 0;
+    color: #ffffff;
+  }
+
+  .navbar-menu li a:hover::after {
+    width: 0;
+  }
+
+  .navbar-actions {
+    margin-right: 15px;
+  }
+
+  .nav-login {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+  }
+
+  .main-container {
+    flex-direction: column;
+    margin-top: clamp(60px, 8vw, 80px);
+  }
+
+  .profile-sidebar {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .profile-card {
+    padding: clamp(10px, 1.5vw, 15px);
+  }
+
+  .profile-avatar {
+    width: clamp(80px, 15vw, 100px);
+    height: clamp(80px, 15vw, 100px);
+  }
+
+  .post {
+    margin-bottom: 15px;
+  }
+
+  .post-avatar {
+    width: clamp(28px, 5vw, 32px);
+    height: clamp(28px, 5vw, 32px);
+  }
+
+  .post-user-info h3 {
+    font-size: clamp(13px, 1.5vw, 14px);
+  }
+
+  .post-user-info small {
+    font-size: clamp(9px, 1.1vw, 10px);
+  }
+
+  .post-content p {
+    font-size: clamp(12px, 1.4vw, 14px);
+  }
+
+  .post-stats {
+    font-size: clamp(11px, 1.3vw, 12px);
+  }
+
+  .post-actions button {
+    font-size: clamp(11px, 1.3vw, 12px);
+    padding: clamp(5px, 0.8vw, 6px) clamp(8px, 1.2vw, 10px);
+  }
+
+  .comment-avatar {
+    width: clamp(24px, 4vw, 28px);
+    height: clamp(24px, 4vw, 28px);
+  }
+
+  .commenter-name {
+    font-size: clamp(11px, 1.3vw, 12px);
+  }
+
+  .comment-content p {
+    font-size: clamp(11px, 1.3vw, 12px);
+  }
+
+  .comment-content small {
+    font-size: clamp(9px, 1.1vw, 10px);
+  }
+
+  .comment-form input {
+    font-size: clamp(11px, 1.3vw, 12px);
+  }
+
+  .comment-form button {
+    padding: clamp(6px, 0.8vw, 8px) clamp(12px, 1.5vw, 15px);
+  }
+
+  .user-info {
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  .user-info img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dropdown-menu {
+    min-width: 140px;
+  }
+
+  .dropdown-menu li {
+    padding: 6px 12px;
+  }
+
+  .dropdown-menu li a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px 10px;
+  }
+
+  .navbar-logo .text-main {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  .navbar-logo .text-sub {
+    font-size: clamp(9px, 2.5vw, 10px);
+  }
+
+  .navbar-logo .logo img {
+    max-width: clamp(40px, 6vw, 50px);
+  }
+
+  .navbar-logo {
+    margin-left: clamp(10px, 2vw, 15px);
+  }
+
+  .navbar-actions {
+    margin-right: clamp(10px, 2vw, 15px);
+  }
+
+  .menu-toggle {
+    font-size: 24px;
+  }
+
+  .navbar-menu {
+    top: 50px;
+    width: clamp(180px, 70%, 250px);
+    padding: 15px;
+  }
+
+  .navbar-menu li a {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .main-container {
+    margin-top: clamp(50px, 7vw, 70px);
+    padding: 10px;
+  }
+
+  .profile-card {
+    padding: 10px;
+  }
+
+  .profile-avatar {
+    width: clamp(60px, 12vw, 80px);
+    height: clamp(60px, 12vw, 80px);
+  }
+
+  .profile-card h2 {
+    font-size: clamp(14px, 1.8vw, 16px);
+  }
+
+  .profile-card p {
+    font-size: clamp(10px, 1.2vw, 11px);
+  }
+
+  .post {
+    padding: 10px;
+  }
+
+  .post-content p {
+    font-size: clamp(11px, 1.3vw, 12px);
+  }
+
+  .user-info {
+    font-size: 11px;
+    padding: 0 8px;
+  }
+
+  .user-info img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dropdown-menu {
+    min-width: 120px;
+  }
+
+  .dropdown-menu li {
+    padding: 5px 10px;
+  }
+
+  .dropdown-menu li a {
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,67 @@
+2025-05-30 07:54:50
+POST: Array
+(
+)
+
+FILES: Array
+(
+)
+
+SESSION: Array
+(
+    [name] => Huỳnh Diệp
+    [email] => huynhdiep123@gmail.com
+    [avatar] => img/default.jpg
+)
+
+
+2025-05-30 08:01:23
+POST: Array
+(
+)
+
+FILES: Array
+(
+)
+
+SESSION: Array
+(
+    [name] => nguyen_2006
+    [email] => nguyen123@gmail.com
+    [avatar] => img/default.jpg
+)
+
+
+2025-05-30 08:04:17
+POST: Array
+(
+    [displayName] => nguyen_2006
+    [username] => diepboy
+    [address] => 
+    [job] => 
+    [facebook] => 
+    [loggedInUserId] => default
+)
+
+FILES: Array
+(
+    [avatar] => Array
+        (
+            [name] => nguyen.jpg
+            [full_path] => nguyen.jpg
+            [type] => image/jpeg
+            [tmp_name] => C:\xampp\tmp\php9616.tmp
+            [error] => 0
+            [size] => 640308
+        )
+
+)
+
+SESSION: Array
+(
+    [name] => nguyen_2006
+    [email] => nguyen123@gmail.com
+    [avatar] => img/default.jpg
+)
+
+

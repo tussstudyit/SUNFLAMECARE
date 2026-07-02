@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Quyên góp</title>
+
+    <!-- Tối ưu hóa tải Google Fonts bằng preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="donate.css" />
+
+    <!-- CSRF meta tags -->
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="QqJoeNebk5YxgN2HBtVwR4riR00uEH7FjYh+ZOQ5AJw=" name="csrf-token" />
+
+    <!-- Meta SEO -->
+    <meta name="Title" content="Chia Sẻ Yêu Thương - Cùng Nhau Xây Dựng Tương Lai" />
+    <meta property="og:title" content="Chia Sẻ Yêu Thương - Cùng Nhau Xây Dựng Tương Lai" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Quyên góp cho ShareLove.org" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+            crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" 
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" 
+            crossorigin="anonymous"></script>
+</head>
+
+<body class="bootstrap-theme v3-theme homepage page-type-donation-v2">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul class="navbar_menu">
+            <li><a href="trangchu.php"><i class="fa fa-home"></i>&nbsp;TRANG CHỦ</a></li>
+            <li><a href="taichinh.php"><i class="fa fa-flag"></i>&nbsp;TÀI CHÍNH</a></li>
+            <li><a href="congdong.php"><i class="fa fa-users"></i>&nbsp;CỘNG ĐỒNG</a></li>
+            <li><a href="hoatdong.php"><i class="fas fa-newspaper"></i>&nbsp;HOẠT ĐỘNG</a></li>
+            <li><a href="lienhe.html"><i class="fa fa-phone"></i>&nbsp;LIÊN HỆ</a></li>
+        </ul>
+    </nav>
+
+    <main id="content" class="container-fluid">
+        <section id="hero" class="row no-gutters">
+            <div class="hero-overlay"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center min-vh-100">
+                    <!-- Content Section - Left Side -->
+                    <div class="col-lg-7 col-md-12">
+                        <div class="content-section">
+                            <div class="content-box">
+                                <div class="content-inner">
+                                    <h1 class="hero-title">Chia Sẻ Yêu Thương</h1>
+                                    <p class="hero-text">
+                                        Chúng tôi tin rằng mỗi hành động nhỏ đều có thể tạo ra những thay đổi lớn. 
+                                        Hãy cùng chúng tôi xây dựng một tương lai tốt đẹp hơn cho những người cần được giúp đỡ. 
+                                        Sự đóng góp của bạn không chỉ là tiền bạc, mà còn là tình yêu thương và hy vọng.
+                                    </p>
+                                    <p class="hero-text mt-4">
+                                        Mọi đóng góp, dù lớn hay nhỏ, đều có ý nghĩa to lớn và sẽ được sử dụng một cách 
+                                        minh bạch để hỗ trợ những hoàn cảnh khó khăn nhất trong cộng đồng.
+                                    </p>
+                                    
+                                    <!-- Hiển thị thông tin mã hoạt động -->
+                                    <div class="activity-info mt-3">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Donation Section - Right Side -->
+                    <div class="col-lg-5 col-md-12">
+                        <div class="donation-section">
+                            <div class="donation-wrapper">
+                                <!-- Charity Message -->
+                                <div class="charity-message">
+                                    <p><strong>Quyên góp cho Chia Sẻ Yêu Thương</strong></p>
+                                    <p>Mỗi đóng góp của bạn sẽ mang lại hy vọng cho những người cần được giúp đỡ</p>
+                                </div>
+
+                                <!-- Donation Form -->
+                                <form id="donation_form" method="POST" action="donate.php">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <!-- Progress Indicator -->
+                                            <div class="form-progress-indicator">
+                                                <ul class="progress-indicator-stages">
+                                                    <li class="progress-indicator-stage stage-1 active">1</li>
+                                                    <li class="progress-indicator-stage stage-2">2</li>
+                                                    <li class="progress-indicator-stage stage-3">3</li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Form Errors Container -->
+                                            <div class="form-errors text-danger text-center mb-3"></div>
+
+                                            <!-- Hidden Activity Code -->
+                                            <input type="hidden" id="activity_code" name="activity_code">
+
+                                            <!-- Stage 1: Amount Selection -->
+                                            <div class="progress-stage active" data-stageid="1">
+                                                <h4 class="text-center mb-4">Chọn số tiền quyên góp</h4>
+                                                
+                                                <!-- Preset Amount Options -->
+                                                <div class="donation-v2-amounts">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="amount_100k" name="donation_amount" value="100000" class="custom-control-input">
+                                                        <label class="custom-control-label" for="amount_100k">100.000 VND</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="amount_200k" name="donation_amount" value="200000" class="custom-control-input">
+                                                        <label class="custom-control-label" for="amount_200k">200.000 VND</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="amount_500k" name="donation_amount" value="500000" class="custom-control-input" checked>
+                                                        <label class="custom-control-label" for="amount_500k">500.000 VND</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="amount_1m" name="donation_amount" value="1000000" class="custom-control-input">
+                                                        <label class="custom-control-label" for="amount_1m">1.000.000 VND</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="amount_2m" name="donation_amount" value="2000000" class="custom-control-input">
+                                                        <label class="custom-control-label" for="amount_2m">2.000.000 VND</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="amount_5m" name="donation_amount" value="5000000" class="custom-control-input">
+                                                        <label class="custom-control-label" for="amount_5m">5.000.000 VND</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="amount_other" name="donation_amount" value="other" class="custom-control-input">
+                                                        <label class="custom-control-label" for="amount_other">Số tiền khác</label>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Custom Amount Input -->
+                                                <div class="donation-other-input-container mt-3">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">VND</span>
+                                                        </div>
+                                                        <input type="text" 
+                                                               id="donation_amount_other_input" 
+                                                               class="form-control" 
+                                                               placeholder="Nhập số tiền"
+                                                               value="500,000">
+                                                    </div>
+                                                </div>
+
+                                                <!-- Amount Display -->
+                                                <div class="amount-display text-center mt-3">
+                                                    <h5>Số tiền quyên góp: <span class="nb_donation_v2_amount text-primary">500,000</span> VND</h5>
+                                                </div>
+
+                                                <!-- Next Button -->
+                                                <div class="button-group">
+                                                    <button type="button" class="btn progress-stage-button-next">
+                                                        Tiếp theo <i class="fas fa-arrow-right ml-2"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Stage 2: Personal Information -->
+                                            <div class="progress-stage" data-stageid="2">
+                                                <h4 class="text-center mb-4">Thông tin cá nhân</h4>
+                                                
+                                                <div class="form-group">
+                                                    <label for="donation_full_name">Họ và tên *</label>
+                                                    <input type="text" 
+                                                           id="donation_full_name" 
+                                                           name="full_name"
+                                                           class="form-control" 
+                                                           placeholder="Nhập họ và tên"
+                                                           required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="donation_email">Email</label>
+                                                    <input type="email" 
+                                                           id="donation_email" 
+                                                           name="email"
+                                                           class="form-control" 
+                                                           placeholder="example@email.com">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="donation_phone">Số điện thoại *</label>
+                                                    <input type="tel" 
+                                                           id="donation_phone" 
+                                                           name="phone"
+                                                           class="form-control" 
+                                                           placeholder="0987654321"
+                                                           required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="donation_address">Địa chỉ *</label>
+                                                    <textarea id="donation_address" 
+                                                              name="address"
+                                                              class="form-control" 
+                                                              rows="3" 
+                                                              placeholder="Nhập địa chỉ đầy đủ"
+                                                              required></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="donation_message">Lời nhắn (tùy chọn)</label>
+                                                    <textarea id="donation_message" 
+                                                              name="message"
+                                                              class="form-control" 
+                                                              rows="3" 
+                                                              placeholder="Để lại lời nhắn cho chúng tôi..."></textarea>
+                                                </div>
+
+                                                <!-- Navigation Buttons -->
+                                                <div class="button-group">
+                                                    <button type="button" class="btn btn-secondary progress-stage-button-prev">
+                                                        <i class="fas fa-arrow-left mr-2"></i> Quay lại
+                                                    </button>
+                                                    <button type="button" class="btn progress-stage-button-next">
+                                                        Tiếp theo <i class="fas fa-arrow-right ml-2"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Stage 3: Payment -->
+                                            <div class="progress-stage" data-stageid="3">
+                                                <h4 class="text-center mb-4">Xác nhận và thanh toán</h4>
+                                                
+                                                <!-- Payment Summary -->
+                                                <div class="payment-summary">
+                                                    <div class="summary-item">
+                                                        <strong>Họ tên:</strong> <span id="summary_name">-</span>
+                                                    </div>
+                                                    <div class="summary-item">
+                                                        <strong>Số tiền:</strong> <span class="nb_donation_v2_amount">-</span> VND
+                                                    </div>
+                                                    <div class="summary-item">
+                                                        <strong>Mã hoạt động:</strong> <span id="summary_activity_code">-</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- QR Payment Section -->
+                                                <div class="qr-payment-section text-center">
+                                                    <h5>Quét mã QR để thanh toán</h5>
+                                                    <div class="qr-code-container mb-3">
+                                                        <img id="qr_code_image" 
+                                                             src="imgthuyennguyen/qr" 
+                                                             alt="QR Code thanh toán" 
+                                                             class="img-fluid">
+                                                    </div>
+                                                    
+                                                    
+                                                </div>
+
+                                                <!-- Payment Error Container -->
+                                                <div class="payment-error-container"></div>
+
+                                                <!-- Navigation Buttons -->
+                                                <div class="button-group">
+                                                    <button type="button" class="btn btn-secondary progress-stage-button-prev">
+                                                        <i class="fas fa-arrow-left mr-2"></i> Quay lại
+                                                    </button>
+                                                    <button type="submit" class="btn btn-success btn-donate">
+                                                        <i class="fas fa-heart mr-2"></i> Xác nhận quyên góp
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="successModalLabel">
+                        <i class="fas fa-check-circle mr-2"></i>Thanh Toán!
+                    </h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Thông tin quyên góp đã được ghi nhận!<br> Vui lòng quét mã QR bên dưới để chuyển khoản số tiền <strong>${formatCurrency(formData.donation_amount)} VND</strong> hoặc chuyển khoản trực tiếp đến tài khoản sau và nhập nội dung:</p>
+                    
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="transferContent" value="${response.data.transfer_content}" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard()">
+                                <i class="fas fa-copy"></i>&nbsp;Sao chép
+                            </button>
+                        </div>
+                    </div>
+                    <!-- QR Payment Section -->
+                    <div class="qr-payment-section text-center">
+                        <div class="qr-code-container mb-3">
+                            <img id="qr_code_image" 
+                                src="imgthuyennguyen/qr.jpg" 
+                                alt="QR Code thanh toán" 
+                                class="img-fluid">
+                            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='hoatdong.php'">
+                        Quay về trang chủ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="donate.js"></script>
+</body>
+</html>

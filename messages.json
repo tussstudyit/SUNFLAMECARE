@@ -1,0 +1,88 @@
+{
+    "D\u1ecdn s\u1ea1ch s\u00f4ng H\u00e0n - V\u00ec m\u1ed9t d\u00f2ng s\u00f4ng xanh bi\u1ebfc": [
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "fre",
+            "timestamp": "2025-05-25 07:52:42"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "\u01b0qefw",
+            "timestamp": "2025-05-25 07:52:44"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "\u01b0efw",
+            "timestamp": "2025-05-25 07:52:45"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "fewfq",
+            "timestamp": "2025-05-25 07:52:49"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "wq",
+            "timestamp": "2025-05-25 07:53:18"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "qqq",
+            "timestamp": "2025-05-25 07:53:20"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "qq",
+            "timestamp": "2025-05-25 07:53:21"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "qqq",
+            "timestamp": "2025-05-25 07:53:22"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "qqqqqqqqqqqqq",
+            "timestamp": "2025-05-25 07:53:26"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "q",
+            "timestamp": "2025-05-25 07:53:29"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "q",
+            "timestamp": "2025-05-25 07:53:30"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "q",
+            "timestamp": "2025-05-25 07:53:31"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "q",
+            "timestamp": "2025-05-25 07:53:32"
+        },
+        {
+            "sender": "<?= $_SESSION['name'] ?>",
+            "avatar": "<?= $_SESSION['avatar'] ?>",
+            "message": "qqq",
+            "timestamp": "2025-05-25 07:53:34"
+        }
+    ]
+}

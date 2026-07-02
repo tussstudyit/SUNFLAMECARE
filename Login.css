@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-image: url(https://image.sggp.org.vn/1200x630/Uploaded/2025/bcgmbliv/2023_11_17/den-mv-nau-an-cho-em-1111-9656-8568-4986.png.webp);
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1px;
+  background-size: cover; /* Làm cho hình nền phủ toàn bộ màn hình */
+  background-position: center center; /* Đảm bảo hình nền căn giữa */
+  transition: background-color 0.5s ease; /* Hiệu ứng chuyển màu nền */
+}
+
+/* -------------------- Navbar -------------------- */
+/* Navbar Desktop */
+.navbar {
+  width: 100%;
+  background: transparent;
+  padding: 5px 15px;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 900;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar_menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 120px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 1200px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar_menu li a {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navbar_menu li a:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffee58;
+  transform: translateY(-3px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar_menu li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 8px;
+  left: 50%;
+  background-color: #ffee58;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar_menu li a:hover::after {
+  width: 60%;
+  left: 20%;
+}
+
+/* Navbar Mobile (Responsive) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0;
+    top: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100vh;
+    background: transparent;
+    transform: translateX(-100%);
+    padding: 80px 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    gap: 20px;
+  }
+
+  .navbar_menu.active {
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .navbar_menu li {
+    width: 100%;
+  }
+
+  .navbar_menu li a {
+    font-size: 18px;
+    padding: 12px 20px;
+    text-align: left;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .navbar_menu li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffee58;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .navbar_menu li a::after {
+    display: none;
+  }
+}
+/* Login */
+.container {
+  background-color: rgba(97, 78, 78, 0.13);
+  backdrop-filter: blur(10px); /* Mờ hơn để tạo hiệu ứng mềm mại */
+  border-radius: 40px;
+  box-shadow: 0 0 50px rgb(126, 118, 118); /* Tăng độ mờ bóng để tạo chiều sâu */
+  position: relative;
+  width: 850px;
+  max-width: 80%;
+  min-height: 500px;
+  overflow: hidden;
+  padding: 40px;
+  transition: all 0.5s ease-in-out; /* Tạo hiệu ứng cho container */
+  margin: auto;
+  margin-top: 75px;
+}
+
+/* Phần tử của form */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.6s ease-in-out;
+}
+select[name="role"] {
+  /* Cơ bản */
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  background-color: white;
+  color: #333;
+  width: 200px;
+  cursor: pointer;
+
+  /* Hiệu ứng hover */
+  transition: all 0.3s ease;
+}
+
+/* Khi hover */
+select[name="role"]:hover {
+  border-color: #999;
+}
+
+/* Khi focus */
+select[name="role"]:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+/* Style cho các option */
+select[name="role"] option {
+  padding: 8px;
+  background: white;
+  color: #333;
+}
+
+/* Style cho option đầu tiên (placeholder) */
+select[name="role"] option[value=""] {
+  color: #999;
+  font-style: italic;
+}
+
+/* Style khi disabled */
+select[name="role"]:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Form đăng nhập */
+.sign-in {
+  left: 0;
+  z-index: 2;
+}
+
+/* Form đăng ký */
+.sign-up {
+  left: 100%; /* Bắt đầu từ bên phải */
+  z-index: 1;
+}
+
+.container.active .sign-in {
+  left: -50%; /* Trượt sang trái */
+}
+
+.container.active .sign-up {
+  left: 50%; /* Trượt vào giữa */
+}
+
+/* Tiêu đề của form */
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: capitalize; /* hoặc 'capitalize' nếu muốn viết hoa chữ cái đầu */
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out;
+}
+
+/* Phần mô tả nhỏ */
+p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  color: #e5e5e5;
+  animation: fadeIn 1.5s ease-out; /* Hiệu ứng fade-in với độ trễ */
+}
+
+/* Các icon xã hội */
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* Cập nhật lại style cho span chứa icon */
+.social-icons span {
+  background: #f0f0f0;
+  color: #333;
+  padding: 8px 16px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease; /* Hiệu ứng chuyển động khi hover */
+}
+
+.social-icons span:hover {
+  transform: translateY(-5px); /* Tạo hiệu ứng nâng icon khi hover */
+  background-color: #e5e5e5;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3); /* Tăng bóng đổ khi hover */
+}
+
+/* Điều chỉnh khoảng cách giữa icon và chữ */
+.social-icons i {
+  color: #ffffff;
+  margin-right: 20px;
+}
+
+/* Xử lý liên kết trong span */
+.social-icons span a {
+  text-decoration: none;
+  color: inherit; /* Đảm bảo màu sắc của liên kết như icon */
+}
+
+/* Text span */
+span {
+  display: block;
+  margin: 20px 0;
+  font-size: 14px;
+  color: #e5e5e5;
+  animation: fadeIn 2s ease-out; /* Hiệu ứng fade-in */
+}
+
+/* Cấu trúc các trường nhập liệu */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  background-color: #f7f7f7;
+  border: none;
+  padding: 12px 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  width: 100%;
+  outline: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border: 1px solid #503390;
+  box-shadow: 0 0 10px rgba(80, 51, 144, 0.5); /* Hiệu ứng sáng khi focus */
+}
+input:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(80, 51, 144, 0.3);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Button */
+button {
+  background-color: #133455;
+  color: #fff;
+  border: none;
+  padding: 14px 50px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #257984;
+  transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+}
+
+a.forgot-password {
+  color: #e5e5e5;
+  font-size: 13px;
+  text-decoration: none;
+  margin: 10px 0;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+a.forgot-password:hover {
+  color: #9ab7d5; /* Màu khi hover vào link */
+}
+
+/* Phần toggle (chuyển đổi giữa đăng ký và đăng nhập) */
+.toggle-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.13);
+  backdrop-filter: blur(5px);
+}
+
+.toggle {
+  background: transparent;
+  height: 100%;
+  width: 200%;
+  position: relative;
+  left: -100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.toggle-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+  text-align: center;
+  color: white;
+}
+
+.toggle-left {
+  left: 0;
+}
+
+.toggle-right {
+  right: 0;
+}
+
+.container.active .toggle {
+  transform: translateX(50%);
+}
+
+.container.active .toggle-container {
+  transform: translateX(-100%);
+}
+
+.toggle-panel button {
+  background-color: transparent;
+  border: 1px solid #fff;
+  margin-top: 30px;
+}
+
+.toggle-panel h1 {
+  color: #fff;
+  margin-bottom: 15px;
+  animation: fadeIn 1s ease-out; /* Hiệu ứng fade-in */
+}
+
+.toggle-panel p {
+  color: #e5e5e5;
+  margin-bottom: 20px;
+}
+
+/* Hiệu ứng FadeIn */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
