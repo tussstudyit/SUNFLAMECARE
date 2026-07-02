@@ -214,16 +214,7 @@ session_start();
     <div class="container">
       <div class="mission-grid">
         <div class="mission-left" data-aos="fade-right">
-          <video
-            src="vd/0606.mp4"
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="img/danvannamtramy.jpg"
-          >
-            alt="Volunteers helping children" >
-          </video>
+          <img src="img/danvannamtramy.jpg" alt="Volunteers helping children" />
         </div>
         <div class="mission-right" data-aos="fade-left">
           <h2 style="color:rgb(13, 80, 116);font-weight: bold;">Sứ mệnh của SUNFLAMECARE</h2>
@@ -662,14 +653,7 @@ session_start();
           <div class="hoatdong-item" data-aos="zoom-in" data-aos-delay="100">
             <div class="hoatdong-card">
               <div class="hoatdong-image">
-                <video
-                  controls
-                  poster="img/tratap.jpg"
-                  title="Trà Tập 2024"
-                >
-                  <source src="vd/0606.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                <img src="img/tratap.jpg" alt="Trà Tập 2024" title="Trà Tập 2024" />
                 <span class="hoatdong-badge">Hoạt động nổi bật</span>
               </div>
               <div class="hoatdong-content">
